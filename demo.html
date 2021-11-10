@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            height: 350px;
+            width: 760px;
+            margin: auto;
+            text-align: center;/*所有文本居中*/
+        }
+        #container .subject{
+            background: #F6F6F6;
+            height: 330px;
+            width: 150px;
+            margin: 10px;
+            padding: 0 10px;
+            float: left;
+        }
+        #container .subject img{
+            width: 100px;
+            height: 100px;
+        }
+        #container .subject .p{
+            width: 150px;
+            margin: 20px 0;
+        }
+        #container .subject a{
+            width: 60px;
+            height: 30px;
+            background: #0053A2;
+            color: white;
+            text-decoration: none;/*去掉下划线*/
+            /*margin: 20px 0;*/
+        }
+
+        #header,#footer{
+            background: #41546D;
+            font-size: 20px;
+            text-align: center;
+        }
+        #main{
+            overflow: auto;
+            text-align: center;
+        }
+        nav,section,aside{
+            float: left;
+        }
+        main>nav{
+            width: 25%;
+        }
+        main>section{
+            width: 50%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        main>aside{
+            width: 25%;
+        }
+        #main p{
+            background: #8496B1;
+            height: 30px;
+            text-align: center;
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="subject">
+            <img src="../images/上.jpg">
+            <div class="p">
+                <p>使用ant插入input组件，点击input框的时候需要去掉阴影部分，会发现加了border:none，和outline:none后还是会有阴影</p>
+            </div>
+            <a href="http://baidu.com">Learn More</a>
+        </div>
+        <div class="subject">
+            <img src="../images/暂停.jpeg">
+            <div class="p">
+                <p>使用ant插入input组件，点击input框的时候需要去掉阴影部分，会发现加了border:none，和outline:none后还是会有阴影</p>
+            </div>
+            <a href="http://baidu.com">Learn More</a>
+        </div>
+        <div class="subject">
+            <img src="../images/播放.jpeg">
+            <div class="p">
+                <p>使用ant插入input组件，点击input框的时候需要去掉阴影部分，会发现加了border:none，和outline:none后还是会有阴影</p>
+            </div>
+            <a href="http://baidu.com">Learn More</a>
+        </div>
+        <div class="subject">
+            <img src="../images/下.jpg">
+            <div class="p">
+                <p>使用ant插入input组件，点击input框的时候需要去掉阴影部分，会发现加了border:none，和outline:none后还是会有阴影</p>
+            </div>
+            <a href="http://baidu.com">Learn More</a>
+        </div>
+    </div>
+
+    <header id="header">
+        Header
+    </header>
+    <main id="main">
+        <nav>
+            Nav
+            <p>LINK</p>
+            <p>LINK</p>
+            <p>LINK</p>
+            <p>LINK</p>
+            <p>LINK</p>
+        </nav>
+        <section>
+            <article>
+                article
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </article>
+            <article>
+                article
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </article>
+            <article>
+                article
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </article>
+        </section>
+        <aside>
+            aside
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </aside>
+    </main>
+    <footer id="footer">
+        Footer
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </footer>
+</body>
+</html>
