@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../管理平台/font/iconfont.css">
+    <title>流式布局</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        img{display: block;}
+        ul{list-style: none;}
+        a{text-decoration: none;color: #555555;}
+        header{height: 45px;line-height: 45px;background: #00b38a;color: white;font-size: 20px;text-align: center;}
+        section.login{height: 43px;display: flex;justify-content: space-between;text-align: center;font-size: 14px;}
+        section.login p{margin-top: 16px;}
+        section.login div{width: 84px;height: 30px;background: #f5f5f5;border-radius: 15px;margin: 10px 15px 0 0;
+            text-align: center;line-height: 30px;}
+        section.login div a{color: #00b38a;width: 100%;height: 100%;display: block;}/*点击区域变成和div一样大*/
+
+        .list li{height: 90px;border-top: 1px #e8e8e8 solid;display: flex;align-items: center;}
+        .list .list_img{width: 60px;margin: 0 10px 0 14px;}
+        .list .list_img img{width: 100%;}
+        .list .list_info{flex: 1;}
+        .list .list_info h2{font-size: 18px;}
+        .list .list_info p{font-size: 14px;display: flex;justify-content: space-between;margin-top: 4px;}
+        .list .list_info p span{margin-right: 14px;color: #00b38a;}
+        .list .list_info span{font-size: 12px;color: #888888;margin-top: 8px;}
+
+        section.more{height: 50px;line-height: 50px;text-align: center;font-size: 14px;border-top: 1px solid #e8e8e8;}
+        section.more a{width: 100%;height: 100%;display: block;}
+
+        footer{height: 115px;text-align: center;font-size: 12px;line-height: 22px;padding-top: 27px;margin-bottom: 45px;
+            box-sizing: border-box;}
+        /*弹性布局要设置宽度,position: fixed;生成绝对定位的元素,相对于浏览器窗口进行定位,元素的位置通过"left","top","right"以及"bottom"属性进行规定*/
+        .tabbar{width: 100%;height: 45px;border-top: 1px #e8e8e8 solid;display: flex;position: fixed;bottom: 0;
+            background: #f6f6f6;font-size: 18px;color: #c2cfcc;}
+        .tabbar div{flex: 1;text-align: center;line-height: 45px;}/*flex: 1;使所有弹性物体模型对象的元素存在相同的长度,不会意识它们内部的内容*/
+        .tabbar div.active{background: #e7f3f0;color: #00b38a;}
+        .tabbar div i{font-size: 20px;position: relative;}
+        .tabbar div:first-child i{font-size: 26px;position: relative;top: 4px;}
+    </style>
+</head>
+<body>
+    <header>拉勾网</header>
+    <section class="login">
+        <p>10秒钟定制职位</p>
+        <div><a href="#">登录</a></div>
+    </section>
+    <ul class="list">
+        <li>
+            <div class="list_img">
+                <a href="#"><img src="../images/search_01.jpg"></a>
+            </div>
+            <div class="list_info">
+                <h2>工作岗位</h2>
+                <p>工作内容<span>8k-12k</span></p>
+                <span>今日 11:41</span>
+            </div>
+        </li>
+        <li>
+            <div class="list_img">
+                <a href="#"><img src="../images/search_01.jpg"></a>
+            </div>
+            <div class="list_info">
+                <h2>工作岗位</h2>
+                <p>工作内容<span>8k-12k</span></p>
+                <span>今日 11:41</span>
+            </div>
+        </li>
+        <li>
+            <div class="list_img">
+                <a href="#"><img src="../images/search_01.jpg"></a>
+            </div>
+            <div class="list_info">
+                <h2>工作岗位</h2>
+                <p>工作内容<span>8k-12k</span></p>
+                <span>今日 11:41</span>
+            </div>
+        </li>
+        <li>
+            <div class="list_img">
+                <a href="#"><img src="../images/search_01.jpg"></a>
+            </div>
+            <div class="list_info">
+                <h2>工作岗位</h2>
+                <p>工作内容<span>8k-12k</span></p>
+                <span>今日 11:41</span>
+            </div>
+        </li>
+    </ul>
+    <section class="more">
+        <a href="#">加载更多</a>
+    </section>
+    <footer>
+        <p>@123456</p>
+        <p><a href="#">移动版</a>.<a href="#">移动版</a>.<a href="#">移动版</a></p>
+    </footer>
+    <section class="tabbar">
+        <div class="active"><i class="iconfont icon-gongsi"></i> 职位</div>
+        <div><i class="iconfont icon-search"></i> 搜索</div>
+        <div><i class="iconfont icon-wodedangxuan1"></i> 我的</div>
+    </section>
+</body>
+</html>
