@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局练习</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+        }
+        #header{
+            height: 30px;
+            background-color: #E83828;
+        }
+        #header div{
+            height: 30px;
+            width: 1005px;
+            margin: auto;
+            background-color: #D3D2D6;
+        }
+        #banner{
+            height: 300px;
+            background-color: #6A69D8;
+        }
+        #category {
+            background-color: #FF649B;
+            height: 150px;
+            width: 1005px;
+            margin: auto;
+        }
+        #category .item{
+            height: 115px;
+            width: 125px;
+            padding: 10px 25px 25px;/*上 左右 下*/
+            border-right: 1px dashed black;/*dotted点状 solid实线 double双线 dashed虚线*/
+            float: left;
+        }
+        #category .item.first{
+            padding-left: 0px;
+        }
+        #category .item.last{
+            padding-right: 0px;
+            border: 0px;
+        }
+        #case{
+            height: 200px;
+            background-color: #EEEEEE;
+        }
+        #case #text{
+            width: 1005px;
+            font-size: 16px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            margin: auto;/*边距自动设定,两边的距离会相等,图片会居中显示*/
+        }
+        #case #item-wrapper{
+            width: 1000px;
+            margin: auto;
+            overflow: auto;/*自动填充,不需要手动设置高度,图片会把高度给撑开*/
+        }
+        #case #item-wrapper .item{
+            background-color: #98B326;
+            width: 320px;
+            height: 130px;
+            float: left;
+        }
+        #case #item-wrapper .item.mg{
+            margin: 0 20px;/*上下 左右*/
+        }
+        #case p{
+            margin:auto;
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+            color: dimgray;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div></div>
+</div>
+<div id="banner"></div>
+<div id="category">
+    <div class="item first"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item last"></div>
+</div>
+<div id="case">
+    <div id="text">Case</div>
+    <div id="item-wrapper">
+        <div class="item"></div>
+        <div class="item mg"></div>
+        <div class="item"></div>
+    </div>
+    <p>查看更多...</p>
+</div>
+</body>
+</html>
