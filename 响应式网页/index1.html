@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NN</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0}
+        li{list-style: none;}
+        a{cursor: pointer;}/*鼠标滑动到a标签,鼠标变成手指图标*/
+        header{
+            background: #3f3f3f;
+            height: 50px;
+            width: 100%;
+            margin: 0;
+            position: fixed;/*固定位置*/
+        }
+        header .menu{
+            display: none;
+            float: right;
+            line-height: 50px;
+            cursor: pointer;
+            margin-right: 20px;
+            font-size: 18px;
+            color: white;
+        }
+        header .menu .nav-list{
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 50px;
+        }
+        header .menu:hover .nav-list{
+            display: block;
+        }
+        header .menu .nav-list a{
+            display: block;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            background: #666666;
+            border-bottom: 1px dotted red;
+        }
+        header img.logo{
+            float: left;
+            width: 110px;
+            margin-left: 30px;
+        }
+        header .nav-list{
+            display: block;
+            float: right;
+            margin-right: 20px;
+        }
+        header .nav-list a{
+            float: left;
+            color: white;
+            margin-right: 20px;
+            line-height: 50px;
+            font-size: 18px;
+
+        }
+        .banner{
+            background: url("../images/cln.PNG");
+            /*width: 100%;*/
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .product-list li{
+            width: 20%;
+            box-sizing: border-box;
+            padding: 0 10px 20px;
+            float: left;
+        }
+        .product-list li img{
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 0 6px 0 #666666;
+        }
+        @media screen and (max-width: 1024px){
+            .product-list li{
+                width: 25%;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .product-list li{
+                width: 33.333%;
+            }
+            header .menu{
+                display: block;
+            }
+            header .nav-list{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 640px){
+            .product-list li{
+                width: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">menu
+            <nav class="nav-list">
+                <a>OK</a>
+                <a>精彩</a>
+                <a>九号</a>
+                <a>摩登</a>
+                <a>时尚</a>
+                <a>芭莎</a>
+                <a>嘉人</a>
+                <a>栋梁</a>
+            </nav>
+        </div>
+        <img class="logo" src="../images/leo.jpg">
+        <nav class="nav-list">
+            <a>九号</a>
+            <a>摩登</a>
+            <a>时尚</a>
+            <a>芭莎</a>
+            <a>嘉人</a>
+            <a>栋梁</a>
+            <a>OK</a>
+            <a>精彩</a>
+        </nav>
+    </header>
+    <div class="banner"></div>
+    <ul class="product-list">
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="../images/多.jpg">
+                <p>摄影展</p>
+                <p>
+                    <span>2021.3.31</span>
+                    <span>Leo Chen</span>
+                </p>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
