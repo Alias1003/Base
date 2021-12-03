@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            display: none;
+        }
+        .l{
+            float: left;
+            top: 200px;
+            left: 0;
+            position: fixed;
+        }
+        .r{
+            float: right;
+            top: 200px;
+            right: 0;
+            position: fixed;
+        }
+        img{
+            display: none;
+        }
+    </style>
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                // $("div").css("display","block")
+                // $("div").show(1000,function(){//1s中完成显示(斜对角方向)，回调函数是动画执行完毕才显示
+                //     alert("显示");
+                // });
+                $("div").slideDown(1000,function(){//1s中完成显示(垂直方向)，回调函数是动画执行完毕才显示
+                    alert("显示");
+                });
+            });
+            $("button").eq(1).click(function(){
+                // $("div").css("display","none")
+                // $("div").hide(1000,function(){
+                //     alert("隐藏");
+                // });
+                $('div').slideUp(1000,function () { 
+                    alert("隐藏");
+                 })
+            });
+            $("button").eq(2).click(function(){
+                // $("div").toggle(1000,function(){//取反
+                //     alert("切换状态");
+                // });
+                $('div').slideToggle(1000,function(){
+                    alert("切换状态");
+                });
+            });
+
+            $(window).scroll(function () {
+                offset = $("html,body").scrollTop();
+                if (offset>=300) {
+                    $("img").show(1000);
+                }else{
+                    $("img").hide(1000);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换状态</button>
+    <div></div>
+    <img src="https://img10.360buyimg.com/img/jfs/t1/160510/16/25709/36032/616cea7eEd14780cc/43b0d9ed8c9e9ab0.png" class="l">
+    <img src="https://img10.360buyimg.com/img/jfs/t1/160510/16/25709/36032/616cea7eEd14780cc/43b0d9ed8c9e9ab0.png" class="r">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

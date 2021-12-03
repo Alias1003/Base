@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <link >
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                $('.one').animate({
+                    width: 200  
+                },1000,function(){
+                    alert("修改完毕");
+                })
+            });
+            $("button").eq(1).click(function(){
+                $('.two').animate({
+                    width: "+=100"  
+                },1000,function(){
+                    alert("累加完毕");
+                })
+            });
+            $("button").eq(2).click(function(){
+                $(".two").animate({
+                    // width: 'toggle'
+                    width: 'hide'
+                },1000,function(){
+                    alert("自定义动画执行完毕");
+                })
+            });
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: red;
+        }
+        .two{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <button>修改属性</button>
+    <button>累加操作</button>
+    <button>切换状态</button>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>

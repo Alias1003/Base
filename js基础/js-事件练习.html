@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件练习</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{width: 20px;height: 20px;border-radius: 50%;background-color: salmon;position: absolute;}
+    </style>
+    <script>
+        window.onload = function () {
+            var arr = document.getElementsByTagName("div");
+            document.onmousemove = function (ev) {
+                var e = ev || window.event;
+                for (var i = arr.length - 1; i > 0; i--) {
+                    arr[i].style.left = arr[i - 1].offsetLeft + 'px';//offsetLeft距离左边的距离
+                    arr[i].style.top = arr[i - 1].offsetTop + 'px';//offsetTop距离顶部的距离
+                }
+                arr[0].style.left = e.clientX + 'px';
+                arr[0].style.top = e.clientY + 'px';
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

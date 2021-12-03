@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表单练习</title>
+    <script>
+        window.onload = function(){
+            var oUsername = document.getElementById("username");
+            var oUsername_span = document.getElementById("username_span");
+            oUsername.onblur = function(){//失去焦点事件
+                var oValue = oUsername.value;
+                //判断用户名长度
+                if(oValue.length < 6 || oValue.length > 18){
+                    oUsername_span.innerHTML = "!长度应为6-18个字符";
+                    oUsername_span.style.color = 'yellow';
+                }else if(!/[a-zA-Z]/.test(oValue[0])){//判断开头是否为字母
+                    oUsername_span.innerHTML = "!必须以字母开头";
+                    oUsername_span.style.color = 'red';
+                }else if(/\W/.test(oValue)){
+                    oUsername_span.innerHTML = "!必须以字母、数字和下划线组成";
+                    oUsername_span.style.color = 'red';
+                }else{
+                    oUsername_span.innerHTML = "该用户名可以注册";
+                    oUsername_span.style.color = 'green';
+                }
+            }
+            var oPassWord = document.getElementById("password");
+            var oDivs = document.getElementsByClassName("divCode");
+            oPassWord.onkeyup = function(){
+                var oValue = this.value;
+                for (var i = 0; i < oDivs.length; i++) {
+                        oDivs[i].style.backgroundColor = 'gray';
+                    }
+                if (oValue.length >= 6) {
+                    if (/^\d+$/.test(oValue) || /^[a-z]+$/.test(oValue) || /^[A-Z]+$/.test(oValue)) {
+                        oDivs[0].style.backgroundColor = 'orange';
+                    } else if (/\d/.test(oValue) && /[a-z]/.test(oValue) && /[A-Z]/.test(oValue)) {
+                        oDivs[2].style.backgroundColor = 'orange';
+                    } else {
+                        oDivs[1].style.backgroundColor = 'orange';
+                    }
+                }
+            }
+                    
+        }
+    </script>
+    <style>
+        #form{
+            width: 200px;height: 200px;background-color: rgb(170, 185, 233);margin: auto;border: 1px solid black;
+        }
+        #form input{
+            width: 160px;height: 25px;margin: 10px auto;font-size: 16px;display: block;
+        }
+        #form span{
+            color: red;font-size: 16px;text-align: center;
+        }
+        #form .divCode{height: 25px;width: 40px;background-color: gray;float: left;margin-left: 20px;text-align: center;}
+    </style>
+</head>
+<body>
+    <form id="form">
+        <input placeholder="用户名" id="username" type="text">
+        <span id="username_span">6-8个字符，可使用字母、数字、下划线，需以字母开头</span>
+        <input type="text" placeholder="密码" id="password">
+        <div class="divCode">弱</div>
+        <div class="divCode">中</div>
+        <div class="divCode">强</div>
+    </form>
+</body>
+</html>

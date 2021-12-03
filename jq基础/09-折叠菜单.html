@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单练习</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            $(".nav>li").click(function(){
+                var $sub = $(this).children(".content");//获取当前元素的子元素
+                $sub.slideDown(1000);//展示
+                var $otherSub = $(this).siblings().children('.content');//获取其他元素的子元素
+                $otherSub.slideUp(500);
+                $(this).addClass("current");
+                $(this).siblings().removeClass("current");
+            });
+            // 需要执行动画，建议在执行之前先调用stop方法停止动画
+            $(".box>li").mouseenter(function(){
+                var $sub = $(this).children(".sub");
+                $sub.slideDown(800);                
+            });
+            $(".box>li").mouseleave(function(){
+                var $othersub = $(this).children(".sub");//拿到二级菜单
+                $othersub.slideUp(800);
+            });
+
+          });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 250px;
+            height: 130px;
+            margin: auto;
+            list-style: none;
+        }
+        .nav>li{
+            border: 1px solid black;
+            font-size: 18px;
+            line-height: 32px;
+            border-bottom: none;
+            text-indent: 1em;/*首行缩进1个单位*/
+            position: relative;
+        }
+        .nav>li:first-child{
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .nav>li:last-child{
+            border-bottom: 1px solid black;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        ul .current .icon-jiantou{
+            transform: rotate(90deg);
+            right: 4px;
+            top: -8px;
+        }
+        ul li .icon-jiantou{
+            position: absolute;
+            right: 10px;            
+        }
+        ul li .content{
+            display: none;
+        }
+        ul li .content li{
+            background-color: blueviolet;
+            border-bottom: 1px solid white;
+        }
+        ul li .content li:hover{
+            background-color: red;
+            border-bottom: 1px solid white;
+        }
+        .box{
+            width: 305px;
+            height: 30px;
+            margin: 50px;
+            text-indent: 0;
+        }
+        .box>li{
+            float: left;
+            background-color: tomato;        
+            border: none;
+            border-right: 1px solid white;
+            height: 30px;
+            width: 100px;
+            line-height: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .box li .sub{
+            display: none;
+        }
+        .box li .sub li{
+            background-color: violet;
+            height: 30px;
+            width: 100px;          
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>一级菜单<span class="iconfont icon-jiantou"></span>
+            <ul class="content">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span class="iconfont icon-jiantou"></span>
+            <ul class="content">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span class="iconfont icon-jiantou"></span>
+            <ul class="content">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span class="iconfont icon-jiantou"></span>
+            <ul class="content">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span class="iconfont icon-jiantou"></span>
+            <ul class="content">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="box">
+        <li>下拉菜单
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>下拉菜单
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>下拉菜单
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            var btns = document.getElementsByTagName("button");
+            //获取
+            btns[0].onclick = function(){
+                //console.log($('.father').width());//获取元素的宽度
+                // console.log($('.father').offset().left);//50
+                console.log($('.son').position().left);//50
+            }
+            //设置
+            btns[1].onclick = function(){
+                //$('.father').width('100px');//设置元素的宽度
+                $('.son').css({
+                    left: "10px"
+                });
+            }
+            btns[2].onclick = function () {
+                // console.log($('.box').scrollTop());//获取滚动的距离
+                console.log($('html').scrollTop());//获取整个页面滚动的距离
+                // 注意点：为了保证浏览器的兼容，获取整个页面滚动的距离，需要写成下面的形式
+                console.log($('html').scrollTop()+$('body').scrollTop());
+            }
+            btns[3].onclick = function () {
+                // $('.box').scrollTop(100);//设置滚动的距离
+                $('html').scrollTop(100);//设置整个页面滚动的距离
+                // 注意点：为了保证浏览器的兼容，设置整个页面滚动的距离，需要写成下面的形式
+                $('html,body').scrollTop(100);
+            }
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+            border: 10px solid black;
+            position: relative;
+            margin: 50px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            left: 50px;
+            top: 50px;
+            position: absolute;
+        }
+        .box{
+            width: 100px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: auto;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <button>获取</button>
+    <button>设置</button>
+    <div class="box">
+        1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10
+        1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10
+        1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10
+    </div>
+    <button>获取</button>
+    <button>设置</button>
+    <br><br><br><br><br><br><br>
+</body>
+</html>

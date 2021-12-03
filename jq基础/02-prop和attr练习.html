@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script src='./js/jquery-1.11.3.js'></script>
+    <script>
+        $(function () {
+            //给按钮添加点击事件
+            var btn = document.getElementsByTagName('button')[0];
+            btn.onclick=function(){
+                //获取输入框输入的内容
+                var Input = document.getElementsByTagName("input")[0];
+                var text = Input.value;
+                //修改img的src属性节点的值
+                $('img').attr('src',text);
+                // $('img').prop('src',text);//返回值不是true和false，不推荐使用
+                
+            }
+        });
+    </script>
+</head>
+<body>
+    <input type="text">
+    <button>切换图片</button><br>
+    <!-- 京东https://img10.360buyimg.com/img/jfs/t1/160510/16/25709/36032/616cea7eEd14780cc/43b0d9ed8c9e9ab0.png -->
+    <img src="https://img.alicdn.com/imgextra/i1/O1CN01KFIfj91MTH1YlYPiw_!!6000000001435-2-tps-426-80.png">
+</body>
+</html>

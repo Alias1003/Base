@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成表格</title>
+    <style>
+        input,#tb tr,td {height: 18px;width: 100px;}
+        .box0{background-color: tomato;}
+        .box1{background-color: darkgreen;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oRow = document.getElementById("row");
+            var oCol = document.getElementById("col");
+            var oBtn = document.getElementById("btn");
+            var oTb = document.getElementById("tb");
+            oBtn.onclick = function(){
+                if(!oRow.value || !oCol.value){
+                    alert("请输入对应的行和列");
+                }else{
+                    for(var i = 0;i<oRow.value;i++){
+                        var oTr = document.createElement("tr");
+                        oTr.className = "box" + (i%2);
+                        for(var j = 0;j<oCol.value;j++){
+                            var oTd = document.createElement("td");
+                            oTr.appendChild(oTd);
+                        }
+                        var oClose = document.createElement("td");
+                        oClose.innerHTML = "<button>删除</button>";
+                        oTr.appendChild(oClose);
+                        oTb.appendChild(oTr);
+                    }
+                    oRow.value = '';
+                    oCol.value = '';
+                }
+            }
+            //给表格的删除按钮添加事件委托
+            oTb.onclick = function(ev){
+                var e = ev || window.event;
+                var target = e.target || window.event.srcElement;
+                if(target.nodeName.toLowerCase() == "button"){//把标签转成小写
+                    oTb.removeChild(target.parentNode.parentNode);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="row" placeholder="行">
+    <input type="text" id="col" placeholder="列">
+    <button id="btn">生成</button>
+    <table id="tb" border="1"></table>
+</body>
+</html>

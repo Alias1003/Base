@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码</title>
+    <script>
+        // 纯数字验证码
+        function numTestCode(n){
+            var arr = [];//存储数字的数组
+            for(var i=0;i<n;i++){
+                var num = parseInt(Math.random() * 10);
+                arr.push(num);
+            }
+            return arr.join("");
+        }
+        // document.write(numTestCode(6));
+
+        //数字加字母验证码
+        function testCode(n){
+            var arr = [];
+            for(var i=0;i<n;i++){
+                var num = parseInt(Math.random() * 123);//生成0-122的随机数
+                if(num >= 0 && num <= 9){
+                    arr.push(num);
+                }else if(num >= 65 && num <= 90 || num >= 97 && num <= 122){//大小写字母
+                    arr.push(String.fromCharCode(num));
+                }else{
+                    i--;//减去一个循环
+                }
+            }
+            return arr.join("");
+        }
+        document.write(testCode(6));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

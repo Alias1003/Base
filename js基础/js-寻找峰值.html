@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>峰值</title>
+    <script>
+        function findPeak(A) {
+                // write your code here
+                for (var i = 0; i < A.length; i++) {
+                    if (A[i] > A[i + 1] && A[i] > A[i - 1]) {
+                        return i;
+                    }
+                }
+            }
+        var arr=[1,2,1,3,4,5,7,6];
+        document.write(findPeak(arr));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

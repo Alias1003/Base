@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #div1{width: 100px;height: 100px;background-color: salmon;position: absolute;}
+    </style>
+    <script src="tools.js"></script>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            // drag(oDiv);
+            oDiv.onmousedown = function(ev){
+                var e = ev || window.event;
+                //记录鼠标和被拖拽物体的相对位置
+                var offsetX = e.clientX - oDiv.offsetLeft;//可视位置的左上角-当前窗口的左上角
+                var offsetY = e.clientY - oDiv.offsetTop;
+                //被拖拽物体保持相对距离和鼠标移动
+                document.onmousemove = function(ev){
+                    var e = ev || window.event;
+                    var l = e.clientX - offsetX;//获取当前窗口的坐标
+                    var t = e.clientY - offsetY;
+                    //限制出界
+                    var windowWidth = document.documentElement.clientWidth || document.body.clientWidth;//获取当前页面的宽
+                    var windowheight = document.documentElement.clientHeight || document.body.clientHeight;//获取当前页面的高
+                    if(l <= 0)
+                        l = 0;
+                    if(l >= windowWidth - oDiv.offsetWidth)//当前窗口的宽-本身的宽
+                        l = windowWidth - oDiv.offsetWidth;
+                    if(t <= 0)
+                        t = 0;
+                    if(t >= windowheight - oDiv.offsetHeight)
+                        t = windowheight - oDiv.offsetHeight; 
+                           
+                    oDiv.style.left = l + 'px';
+                    oDiv.style.top = t + 'px';
+                }
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

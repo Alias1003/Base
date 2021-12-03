@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                $(".nav").fadeIn(1000,function () {
+                    alert("谈入完毕");
+                });
+            });
+            $("button").eq(1).click(function(){
+                $(".nav").fadeOut(1000,function () {
+                    alert("谈出完毕");
+                });
+            });
+            $("button").eq(2).click(function(){
+                $(".nav").fadeToggle(1000,function () {
+                    alert("谈入完毕");
+                });
+            });
+            $("button").eq(3).click(function(){
+                $(".nav").fadeTo(1000,0.5,function () {
+                    alert("谈入完毕");
+                });
+            });
+
+            //弹窗广告
+            $(".box").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);//链式编程
+            $("span").click(function(){
+                $(".box").slideUp();
+            });
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            display: none;
+        }
+        .box{
+            width: 200px;
+            height: 100px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+        .box>img{
+            width: 200px;
+            height: 100px;
+            right: 0;
+            bottom: 0;
+            position: fixed;
+        }
+        .box>span{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            position: fixed;
+            top: 510px;
+            right: 0;
+            text-align: center;
+        }
+        .box>span:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>切换状态</button>
+    <button>淡化效果</button>
+    <div class="nav"></div>
+    <div class="box">
+        <!-- <img src="./images/阴影.jpg"> -->
+        <img src="https://img.alicdn.com/imgextra/i3/O1CN01Mn65HV1FfSEzR6DKv_!!6000000000514-55-tps-228-59.svg">
+        <span>X</span>
+    </div>
+</body>
+</html>

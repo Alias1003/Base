@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串练习</title>
+    <script>
+        //将子字符串按照单词进行逆序，空格作为划分单词的唯一条件
+        function reverseStr(str){
+            var arr = str.split(" ");//以空格分隔
+            arr.reverse();
+            return arr.join(" ");//输出时以空格分隔
+        }
+        // function reverseStr(str){
+        //     var arr = str.split(" ");
+        //     var newStr = [];
+        //     for(var i=str.length-1;i>=0;i--){
+        //         newStr.push(arr[i]);   
+        //     }
+        //     return newStr.join(" ");
+        // }
+        // document.write(reverseStr("Welcome to Beijing"));
+
+        //对称数组，由原数组的正序反序拼接而成
+        function symmetryArr(arr){
+            var newArr = arr.concat();//复制
+            for(var i = arr.length-1;i>=0;i--){
+                newArr.push(arr[i]);
+            }
+            return newArr;
+        }
+        // document.write(symmetryArr(["one","two","three"]));
+        
+        //统计句子中的单词个数
+        function countOfWord(str){
+            var count = 0;
+            for(var i=0;i<str.length-1;i++){
+                if(isABC(str[i]) && !isABC(str[i+1])){
+                    count++;
+                }
+            }
+            return count;
+        }
+        function isABC(charStr){
+            if(charStr>="a" && charStr<="z" || charStr>="A" && charStr <="Z"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        // document.write(countOfWord("yes,i am a girl."));
+
+        //查找子串出现的次数，返回字符串str中出现的substring的次数
+        function search(str1,str2){
+            var arr = str1.split(str2);
+            return arr.length-1;//分割了三次会产生四段，需要-1
+        }
+        // alert(search("abaabaaba","aba"));
+
+        //判断是否为邮箱
+        function isEmail(str){
+            var index = str.indexOf("@");//查找@
+            if(index != -1){
+                var arr = str.split("@");
+                if (isPoint(arr[1])) {//判断名字里面每一个字符是否符合
+                    var usename = arr[0];
+                    var isYes = true;
+                    for(var i = 0;i<usename.length;i++){
+                        if(!isChar(usename[i])){
+                            isYes = false;
+                            break;
+                        }
+                    }
+                    return isYes;
+                }
+            }
+        }
+        function isChar(str){
+            if(str>='a' && str<='z' || str>='A' && str<='Z' || str>='0' && str<='9' || str=="_"){
+                return true;
+            }else
+                return false;
+        }
+        function isPoint(str){
+            var index = str.indexOf('.');
+            if(index == -1){
+                return false;
+            }else{
+                var pointCom = str.substring(index);//提取.之后的字符串
+                if(pointCom == ".com"){
+                    return true;
+                }else
+                    return false;
+            }
+        }
+        // document.write(isEmail("_ww@qq.com"));
+
+        //敏感词过滤
+        var arr = [/nm/ig,/wk/ig];
+        function btnClick(){
+            var oTxt = document.getElementById("txt");//获取id的值
+            var oMsg = document.getElementById("msg");
+            var oValue = oTxt.value;
+            for(var i=0;i<arr.length;i++){//遍历所有敏感词
+                oValue = oValue.replace(arr[i],"*");
+            }
+            oMsg.innerHTML = oValue;
+            oTxt.value = '';
+        }
+
+        //表单验证
+        function func(){
+            var oUsername = document.getElementById("username");
+            var oUsernameSpan = document.getElementById("usename_span");
+            var oValue = oUsername.value;
+            if(oValue.length < 6 || oValue.length > 18){
+                oUsernameSpan.innerHTML = "!用户名应为6-8个字符";
+            }else if(!isABC(oValue[0])){//判断首字符是否为字母
+                oUsernameSpan.innerHTML = "!用户名第一个应为字母";
+            }else{//判断是否为字母、数字、下划线组成
+                var isYes = true;
+                for(var i = 0;i<oValue.length;i++){
+                    if(!isChar(oValue[i])){                        
+                        isYes = false;
+                        break;
+                    }
+                }
+                if(isYes)
+                    oUsernameSpan.innerHTML = "√恭喜，该邮箱地址可注册";
+                else
+                oUsernameSpan.innerHTML = "!邮箱地址由字母、数字或下划线组成";
+
+            }
+        }
+    </script>
+    <style>
+        #msg{
+            border: 1px black solid;
+            width: 200px;
+            height: 100px;
+        }
+        #form{
+            width: 200px;height: 200px;background-color: rgb(170, 185, 233);
+            margin: auto;
+        }
+        #form input{
+            width: 160px;height: 25px;margin: 10px auto;font-size: 16px;display: block;
+        }
+        #form span{
+            color: red;font-size: 16px;text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="txt" cols="20" rows="10"></textarea>
+    <button onclick="btnClick();">发布</button>
+    <div id="msg"></div>
+
+    <form id="form">
+        <input placeholder="用户名" id="username" type="text" onblur="func();">
+        <span id="usename_span">6-8个字符，可使用字母、数字、下划线，需以字母开头</span>
+        <input type="text" placeholder="密码">
+    </form>
+</body>
+</html>

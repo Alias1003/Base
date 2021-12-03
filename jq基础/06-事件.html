@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $('.father').click(function(){
+                alert("father");
+            });
+            // $('.father').trigger('click');//自动触发事件
+            // $('.father').triggerHandler('click');//自动触发事件
+            $(".son").click(function(event){
+                alert("son");
+                // return false;//阻止事件冒泡
+                event.stopPropagation();
+            });
+            // $('a').click(function(event){
+            //     alert("注册");
+            //     // return false;
+            //     event.preventDefault();//阻止默认事件
+            // });
+            $('span').click(function(){
+                alert("a");
+            });
+            // $('span').trigger('click');//触发默认事件
+
+            // 事件委托
+            $('button').click(function(){
+                $('ul').append("<li>新增li</li>");
+            });
+            $("ul").delegate("li","click",function(){//把li的click事件委托给ul
+                console.log($(this).html());//由于事件冒泡，故可以获取li的内容
+            });
+            
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(230, 159, 17);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="https://www.baidu.com"><span>百度</span></a>
+    <form action="https://www.baidu.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <ul>
+        <li>第一个li</li>
+        <li>第二个li</li>
+        <li>第三个li</li>
+    </ul>
+    <button>添加</button>
+</body>
+</html>

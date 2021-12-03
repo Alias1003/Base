@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取元素</title>
+    <style>
+        #box{height: 200px;width: 300px;border: 1px solid black;margin: 100px auto;font-size: 18px;
+            text-align: center;line-height: 200px;background-color: white;}
+    </style>
+    <script>
+        //获取CSS样式
+        function getStyle(node, cssStyle) {
+            return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+        function randomColor(){
+            var color = "rgba(" + parseInt(Math.random()*256) + "," + parseInt(Math.random()*256) + "," + parseInt(Math.random()*256) + ",1)";
+            return color;
+        }
+        window.onload = function(){
+            var oDiv = document.getElementById("box");
+            var speed = 5;//每一次变化的大小
+            var count = 0;//计数
+            setInterval(function(){
+                oDiv.style.color = randomColor();//颜色随机
+                var ifont = parseInt(getStyle(oDiv,'fontSize'));//将上一次的字体大小取出
+                oDiv.style.fontSize = ifont + speed + 'px';//变化的字体大小，重复赋值再放回去
+                count++;
+                if(count % 6 == 0){//增加6次以后取反，再减小6次
+                    speed *= -1;//取反
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div id="box">好好学习</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #imgDiv{width: 300px;height: 330px;background-color: #bfa;margin: auto;text-align: center;padding: 10px;}
+        #imgDiv img{width: 300px;height: 290px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var img = document.getElementById("img");//获取img标签
+            var imgArr = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
+            var index = 0;//存放数组的下标
+            //开启定时器
+            setInterval(function(){
+
+            },1000);
+        }
+    </script>
+</head>
+<body>
+    <div id="imgDiv">
+        <img id="img" src="images/1.jpg">      
+    </div>
+    
+</body>
+</html>

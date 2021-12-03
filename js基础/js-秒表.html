@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #div{width: 500px;height: 300px;border: 1px white solid;position: absolute;left: 32%;}
+        #div1,#div2{width: 200px;height: 220px;border: 1px black solid;background-color: chocolate;
+            text-align: center;padding: 10px;position: relative;}
+        #div1{top: 20px; left: 20px;}
+        #div2{top: -222px; left: 260px;}
+        #div1 span,#div2 span{font-size: 22px;}
+        #div1 button,#div2 button{height: 30px;width: 100px;background-color: black;color: white;margin-top: 20px;}
+    </style>
+    <script>
+        function $(id){//获取id的函数
+            return document.getElementById(id);
+        }
+        var i = 0;//总秒数
+        var timer = null;//记录定时器的返回值
+        var ii = 0;//总秒数
+        var allTimer = null;//记录定时器的返回值
+        var isRunning = false;//代表当前定时器是否运行
+        window.onload = function(){//写在这里的代码在整个页面加载完才执行
+            $("start").onclick = function(){
+               timer = setInterval(function(){
+                    i++;
+                    $("second").innerHTML = doubleNum(i % 60);
+                    $("minute").innerHTML = doubleNum(parseInt(i / 60) % 60);
+                    $("hour").innerHTML = doubleNum(parseInt(i / 3600));
+               },1000)
+            }
+            $("stop").onclick = function(){
+                clearInterval(timer);
+            }
+            $("reset").onclick = function(){
+                clearInterval(timer);
+                i = 0;
+                $("hour").innerHTML = "00";
+                $("minute").innerHTML = "00";
+                $("second").innerHTML = "00";
+            }
+
+            //解决点击几次开始按钮出现速度加快的情况
+            function startFunc(){
+                allTimer = setInterval(function(){
+                    ii++;
+                    $("second2").innerHTML = doubleNum(ii % 60);
+                    $("minute2").innerHTML = doubleNum(parseInt(ii / 60) % 60);
+                    $("hour2").innerHTML = doubleNum(parseInt(ii / 3600));
+               },1000)
+            }
+            function stopFunc(){
+                clearInterval(allTimer);
+            }
+            $("btn").onclick = function(){
+                if(!isRunning){//定时器在运行,按钮应该显示"暂停"
+                    $("btn").innerHTML = "暂停";
+                    isRunning = true;
+                    startFunc();
+                }else{
+                    $("btn").innerHTML = "开始";
+                    isRunning = false;
+                    stopFunc();
+                }
+            }
+            $("reset2").onclick = function(){//先把定时器关掉再清零
+                clearInterval(allTimer);
+                ii = 0;
+                isRunning = false;
+                $("hour2").innerHTML = "00";
+                $("minute2").innerHTML = "00";
+                $("second2").innerHTML = "00";
+            }
+        }
+        function doubleNum(num){
+            if(num < 10)
+                return "0" + num;
+            else
+                return num;
+        }
+    </script>
+    <title>秒表</title>
+</head>
+<body>
+    <div id="div">
+        <div id="div1">
+            <span id="hour">00</span>
+            <span>:</span>
+            <span id="minute">00</span>
+            <span>:</span>
+            <span id="second">00</span>
+            <br/>
+            <button id="start">开始</button>
+            <button id="stop">暂停</button>
+            <button id="reset">复位</button>
+        </div>
+        <div id="div2">
+            <span id="hour2">00</span>
+            <span>:</span>
+            <span id="minute2">00</span>
+            <span>:</span>
+            <span id="second2">00</span>
+            <br/>
+            <button id="btn">开始</button>
+            <button id="reset2">复位</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序</title>
+    <script>
+        let num = prompt("请输入数字，以逗号隔开");
+        let arr = num.split(",");
+        // document.write(arr+"<br>");
+        console.log(arr);
+        for(var i = 0;i<arr.length;i++){
+            for(var j =0;j<arr.length-i;j++){
+                if(arr[j]>arr[j+1]){
+                    let temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+            
+        }
+        // document.write(arr);
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

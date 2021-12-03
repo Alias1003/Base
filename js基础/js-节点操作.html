@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作</title>
+    <style>
+        #div1{width: 300px;height: 75px;background-color: tomato;}
+        #div1 #input1{height: 25px;width: 292px;font-size: 18px;outline: none;}
+        #div1 button{height: 25px;width: 80px;background-color: tan;margin: 8px;}
+        #div2{height: 500px;width: 300px;background-color: burlywood;}
+        #div2 div{height: 25px;width: 300px;border-bottom: 1px dashed black;position: relative;}
+        /* #div2 div button{height: 22px;width: 30px;position: absolute;right: 0;top: 2px;} */
+    </style>
+    <script>
+        window.onload = function(){
+            //1、获取id
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oInput = document.getElementById("input1");
+            //2、获取div1下的所有节点
+            var allBtn = oDiv1.getElementsByTagName("button");
+            //3、分别给三个按钮添加不同的点击函数
+            allBtn[0].onclick = function(){
+                if(!oInput.value){
+                    alert("输入内容不能为空！");
+                }else{//获取到输入框的内容，创建节点添加到页面上
+                    var newDiv = document.createElement("div");//创建元素节点
+                    var newTxt = document.createTextNode(oInput.value);//创建文本节点
+                    newDiv.appendChild(newTxt);//将文本节点插入到元素节点后面
+                    newDiv.style.backgroundColor = randomColor();
+                    oDiv2.appendChild(newDiv);
+                    oInput.value = '';
+                }
+            }
+            //删除
+            allBtn[1].onclick = function(){
+                oDiv2.removeChild(oDiv2.lastChild);//删除最后一个节点
+            }
+            //复制
+            allBtn[2].onclick = function(){
+                var newNode = oDiv2.lastChild.cloneNode(true);//先复制最后一个节点
+                oDiv2.appendChild(newNode);//再把复制的节点添加到oDiv2
+            }
+        }
+
+        function randomColor(){
+            var color = "rgba(" + parseInt(Math.random()*256) + "," + parseInt(Math.random()*256) + "," + parseInt(Math.random()*256) + ",1)";
+            return color;
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" placeholder="请输入内容" id="input1">
+        <button>增加</button>
+        <button>删除</button>
+        <button>复制</button>
+    </div>
+    <div id="div2">
+    </div>
+</body>
+</html>

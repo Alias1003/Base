@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微博</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script src="./js/jquery-1.11.3.js"></script>
+    <!-- <script>
+        $(function(){
+            //事件委托，实时监听输入框的输入
+            $("body").delegate('.comment','propertychange input',function(){
+                // console.log($(this).val());
+                if($(this).val().length>0){
+                    $('.send').prop('disabled',false);//让发送按钮可用
+                }else{
+                    $('.send').prop('disabled',true);
+                }
+            });
+            $('.send').click(function () {
+                var $text = $('.comment').val();//拿到用户输入的内容
+                var $weibo = createEle($text);//创建节点
+                $('.content').prepend($weibo);//插入微博
+            });
+            $('body').delegate('.good','click',function(){//事件委托，监听good按钮
+                // console.log($(this).text());//输入结果是一个字符
+                $(this).text(parseInt($(this).text())+1);//把字符转换成int型再传回原来的文本
+            });
+            $('body').delegate('.bad','click',function(){//事件委托，监听bad按钮
+                // console.log($(this).text());//输入结果是一个字符
+                $(this).text(parseInt($(this).text())+1);//把字符转换成int型再传回原来的文本
+            });
+            $('body').delegate('.del','click',function(){//事件委托，监听del按钮
+                $(this).parents('.info').remove();//找到当前元素指定的祖先元素，删除
+            });
+            function createEle(text) { //创建时间节点函数
+                var $weibo = $(
+                '<div class="info">'+
+                    '<p class="infoText">'+text+'</p>'+
+                    '<p class="infoOperation">'+
+                        '<span class="infoTime"> '+formatDate()+'</span>'+
+                        '<span class="infoHandler">'+
+                            '<a href="javascript:;" class="good iconfont icon-dianzan"> 0</a>'+
+                            '<a href="javascript:;" class="bad iconfont icon-dianzan"> 0</a>'+
+                            '<a href="javascript:;" class="del iconfont icon-shanchu"> 删除</a>'+
+                        '</span>'+
+                    '</p>'+
+                '</div>'
+                );
+                return $weibo;
+            }
+            function formatDate(){//生成时间函数
+                var date = new Date();
+                var arr = [
+                    date.getFullYear()+'-',
+                    date.getMonth()+1+'-',
+                    date.getDate()+' ',
+                    date.getHours()+':',
+                    date.getMinutes()+':',
+                    date.getSeconds()
+                ];
+                return arr.join("");
+            }
+            formatDate();
+        });
+    </script> -->
+    <script>
+        $(function(){
+            $('body').delegate('.comment','propertychange input',function(){
+                // alert("实时监听");
+                if($(this).val().length>0){
+                    $('.send').prop('disabled',false);//让发送按钮可用
+                }else{
+                    $('.send').prop('disabled',true);
+                }
+               
+            });
+            $('.send').click(function () { 
+                    var $text = $('.comment').val();
+                    var $weibo = createEle($text);
+                    $('.content').prepend($weibo);
+            });
+            $('body').delegate('.good','click',function () {  
+                $(this).text(parseInt($(this).text())+1);
+            });    
+            $('body').delegate('.bad','click',function () {
+                $(this).text(parseInt($(this).text())+1);
+            })
+            $('body').delegate('.del','click',function(){
+                $(this).parents('.info').remove();
+            });
+            function createEle(text){
+                var $weibo = $(
+                    '<div class= "info" >'+
+                        '<p class="infoText">'+text+'</p>'+
+                        '<p class="infoOperation">'+
+                            '<span class="infoTime">'+formateDate()+'</span>'+
+                            '<span class="infoHandler">'+
+                                '<a href="javascript:;" class="good iconfont icon-dianzan"> 0</a>'+
+                                '<a href="javascript:;" class="bad iconfont icon-dianzan"> 0</a>'+
+                                '<a href="javascript:;" class="del iconfont icon-shanchu"> 删除</a>'+
+                            '</span>'+
+                        '</p>'+
+                    '</div >'
+                 );
+                 return $weibo;
+            }
+            function formateDate() {
+                var date = new Date();
+                var arr = [
+                    date.getFullYear()+'-',
+                    date.getMonth()+1+'-',
+                    date.getDate()+' ',
+                    date.getHours()+':',
+                    date.getMinutes()+':',
+                    date.getSeconds(),
+                ];
+                return arr.join('');
+            }
+        });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .text{
+            width: 500px;
+            height: 130px;
+            border: 1px solid #ccc;          
+            position: relative;
+            margin: auto;
+        }
+        .text textarea{
+            width: 500px;
+            height: 100px;
+            border: none;
+            outline: none;
+            resize: none;
+            font-size: 16px;
+        }
+        .text .send{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background-color: orange;
+            color: white;
+            line-height: 30px;
+            border: none;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 16px;
+        }
+        .content{
+            width: 500px;
+            margin: 10px auto 0 auto;
+        }
+        .content .info{
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+        .content .info .infoOperation{
+            margin-top: 10px;
+        }
+        .content .info .infoHandler{
+            float: right;
+            position: relative;
+        }
+        .content .info .infoHandler a{
+            text-decoration: none;
+            color: gray;
+            font-size: 16px;
+            padding: 5px;       
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="text">
+        <textarea class="comment"></textarea>
+        <input type="button" value="发布" class="send" disabled><!--按钮不可用-->
+    </div>
+    <div class="content">
+        <div class="info">
+            <p class="infoText">内容</p>
+            <p class="infoOperation">
+                <span class="infoTime">2021-11-2 22:36:13</span>
+                <span class="infoHandler">
+                    <a href="javascript:;" class="good iconfont icon-dianzan"> 0</a>
+                    <a href="javascript:;" class="bad iconfont icon-dianzan"> 0</a>
+                    <a href="javascript:;" class="del iconfont icon-shanchu"> 删除</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

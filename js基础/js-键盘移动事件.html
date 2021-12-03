@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘移动加定时器去卡顿</title>
+    <style>
+        #box{width: 100px;height: 100px;background-color: coral;position: absolute;}
+    </style>
+    <script>
+        window.onload = function () {
+            var speed = 10;
+            var dir = 0;//表示移动的方向
+            setInterval(function () {//开启定时器来控制div的移动
+                switch (dir) {
+                    case 37:
+                        box.style.left = box.offsetLeft - speed + "px";
+                        break;
+                    case 38:
+                        box.style.top = box.offsetTop - speed + "px";
+                        break;
+                    case 39:
+                        box.style.left = box.offsetLeft + speed + "px";
+                        break;
+                    case 40:
+                        box.style.top = box.offsetTop + speed + "px";
+                        break;
+                }
+            }, 30);
+            document.onkeydown = function (ev) {
+                e = ev || window.ev;
+                //console.log(e.keyCode);//控制台输出 左37 上38 右39 下40
+
+                if (e.ctrlKey) {//等于e.keyCode&&e.ctrlKey
+                    speed = 100;
+                } else
+                    speed = 10;
+                dir = e.keyCode;//将按键的值赋给dir
+                //var box = document.getElementById("box");//是否注释都可以用
+
+            }
+            //当按键抬起时方向不动
+            document.onkeyup = function () {
+                dir = 0;
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

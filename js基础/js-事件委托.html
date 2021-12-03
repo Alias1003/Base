@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul{list-style: none;}
+        button{height: 25px;width: 50px;text-align: center;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oUl = document.getElementById("ul1");
+            oUl.onclick = function(ev){
+                var e = ev || window.event;
+                var target = e.target || window.event.srcElement;
+                if(target.nodeName.toLowerCase() == "li"){
+                    target.style.backgroundColor = 'red';
+                }
+            }
+            var obtn = document.getElementById("btn");
+            var i = 6;
+            obtn.onclick = function(){
+                var newNode = document.createElement("li");
+                newNode.innerHTML = i++;
+                oUl.appendChild(newNode);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">增加</button>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
