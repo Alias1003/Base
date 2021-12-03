@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            width: 350px;
+            overflow: auto;
+            background: #9DA71E;
+            margin: 20px auto;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        .step{
+            font: bold 18px "微软雅黑 Light";
+            margin: 10px 0;
+        }
+        .form-line{
+            background-color: #CCD58F;
+            border: 2px white solid;/*边框 白色 实线*/
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        .form-line span{
+            display: inline-block;
+            width: 110px;
+            text-align: center;
+        }
+        .form-line input{
+            width: 200px;
+            border-radius: 3px;
+            border: none;
+            outline: none;/*轮廓,input没有轮廓*/
+        }
+        .form-line input[type=radio]{/*增加一个类型为radio的筛选条件*/
+            width: 20px;
+            height: 13px;
+        }
+        .form-line textarea{
+            height: 70px;
+            width: 200px;
+            vertical-align: top;
+            border: none;
+            border-radius: 3px;
+            resize: none;/*重设大小,代表不能拖拉使文本框拉大*/
+            outline: none;/*轮廓,input没有轮廓*/
+        }
+        .submit input{
+            width: 80px;
+            height: 25px;
+            background: #353B11;
+            margin: auto;
+            border: none;
+            color: white;
+            display: block;
+            line-height: 25px;
+            border-radius: 15px;
+            cursor: pointer;/*光标点到按钮时会变成小手*/
+        }
+        .div{
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            border-radius: 25px;
+            border: 1px solid black;
+            outline: 5px solid black;
+            outline-offset: -37px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <section>
+            <p class="step">第一步,详细信息</p>
+            <p class="form-line">
+                <span>姓名</span>
+                <input type="text" placeholder="请输入姓名">
+            </p>
+            <p class="form-line">
+                <span>电话</span>
+                <input type="tel" placeholder="请输入11位的电话号码">
+            </p>
+            <p class="form-line">
+                <span>Facebook主页</span>
+                <input type="url">
+            </p>
+        </section>
+        <section>
+            <p class="step">第二步,收货地址</p>
+            <p class="form-line">
+                <span>详细地址</span>
+                <textarea placeholder="想吃啥就点啥"></textarea>
+            </p>
+            <p class="form-line">
+                <span>邮编</span>
+                <input type="email">
+            </p>
+        </section>
+        <section>
+            <p class="step">第三步,银行卡信息</p>
+            <p class="form-line">
+                <span>银行卡类型</span>
+                <input type="radio" name="cardName">借记卡
+                <input type="radio" name="cardName">信用卡
+                <input type="radio" name="cardName">VISA卡
+            </p>
+            <p class="form-line">
+                <span>卡号</span>
+                <input type="number">
+            </p>
+            <p class="form-line">
+                <span>密码</span>
+                <input type="password">
+            </p>
+            <p class="form-line">
+                <span>持卡人</span>
+                <input type="text">
+            </p>
+            <p class="submit">
+                <input type="submit" value="提交">
+            </p>
+        </section>
+    </form>
+
+    <div class="div">
+
+    </div>
+</body>
+</html>
