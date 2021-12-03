@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script src="./jq/jquery-1.11.3.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="./images/logo.png" class="logo">
+        <div class="menu">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li class="active"><a href="">关于大厦<div class="iconfont icon-zhongdian"></div></a></li>
+                <li><a href="">套房与客房</a></li>
+                <li><a href="">会议宴会</a></li>
+                <li><a href="">休闲服务</a></li>
+                <li><a href="">美食</a></li>
+                <li><a href="">优惠</a></li>
+                <li><a href="">更多</a></li>
+            </ul>
+            <img src="./images/用户 (2).png" class="user">
+            <div class="china r">
+                <p>简体中文</p>
+                <i class="iconfont icon-xiangxiajiantou"></i>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="Text">
+            <p>首 &nbsp;都 &nbsp;雅 &nbsp;地</p>
+            <p>岭 &nbsp;南 &nbsp;之 &nbsp;家</p>
+        </div>
+        <button>了解更多</button>
+        <ul class="time_room">
+            <li class="inRoom">
+                <p>入住时间：</p>
+                <input type="date">
+            </li>
+            <li class="outRoom">
+                <p>退房时间：</p>
+                <input type="date">
+            </li>
+            <li class="number">
+                <p>房间数量：</p>
+                <div>
+                    <input type="button" class="on_num sub" value="-" data-v="-1">
+                    <input type="text" value="1间">
+                    <input type="button" class="on_num add" value="+" data-v="+1">
+                </div>
+            </li>
+            <li class="choose">
+                <p>选择房型：</p>
+                <select id="room">
+                    <!-- <option>房型</option> -->
+                    <option disabled selected>房型</option>
+                    <option>悦享大床房</option>
+                    <option>悦享双床房</option>
+                    <option>致享大床房</option>
+                    <option>粤式行政套房</option>
+                    <option>岭南套房</option>
+                    <option>南粤套房</option>
+                </select>
+            </li>
+            <li>
+                <div class="search">搜索房型</div>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="Img">
+            <img src="./images/微信图片_2.png">
+            <ul>
+                <li class="active">01</li>
+                <li>02</li>
+                <li>03</li>
+            </ul>
+        </div>
+        <div class="Text">
+            <h1>大 厦 简 介</h1>
+            <h3>享受生活的最佳场所</h3>
+            <p>北京广东大厦前身是岭南饭店，于1990年6月8日建成开业，
+                2020-2021年按四星级标准完成全面安全升级改造，
+                以“云山珠水、鱼米之乡”为装饰主题，简约大气，环保节能，
+                以深厚岭南文化品位及超越期待的服务，
+                致力打造首都雅地，岭南之家。</p>
+            <button>了解更多<i>→</i></button>
+        </div>
+        <div class="ban">
+            <h1>我们的特色</h1>
+            <p>云山珠水，鱼米之乡</p>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="introduce one">
+            <div class="overlay"><i class="iconfont icon-xiayige"></i></div>
+            <span class="iconfont icon-canyinmeishi"></span>
+            <h2>餐饮美食</h2>
+            <em>一</em>
+            <p>简单介绍文案简单介绍文案简单介绍文案</p>
+        </div>
+        <div class="introduce two">
+            <div class="overlay"><i class="iconfont icon-xiayige"></i></div>
+            <span class="iconfont icon-kefang"></span>
+            <h2>舒适客房</h2>
+            <em>一</em>
+            <p>简单介绍文案简单介绍文案简单介绍文案</p>    
+        </div>
+        <div class="introduce three">
+            <div class="overlay"><i class="iconfont icon-xiayige"></i></div>
+            <span class="iconfont icon-kafei"></span>
+            <h2>休闲娱乐</h2>
+            <em>一</em>
+            <p>简单介绍文案简单介绍文案简单介绍文案</p>    
+        </div>
+        <div class="introduce four">
+            <div class="overlay"><i class="iconfont icon-xiayige"></i></div>
+            <span class="iconfont icon-huiyishi"></span>
+            <h2>商务会议室</h2>
+            <em>一</em>
+            <p>简单介绍文案简单介绍文案简单介绍文案</p>   
+        </div>       
+    </div>
+    <div class="service">
+        <div class="ban">
+            <h1>我们的服务</h1>
+            <p>云山珠水，鱼米之乡</p>
+        </div>
+        <div class="serve">
+            <div class="food">
+                <span class="iconfont icon-songcanfuwu"></span>
+                <p>送餐服务</p>
+            </div>
+            <div class="wash">
+                <span class="iconfont icon-laundry_service"></span>
+                <p>洗衣服务</p>
+            </div>
+            <div class="wake">
+                <span class="iconfont icon-jiaoxingfuwu"></span>
+                <p>叫醒服务</p>
+            </div>
+            <div class="rite">
+                <span class="iconfont icon--hour-reception"></span>
+                <p>礼宾司服务</p>
+            </div>
+            <div class="business">
+                <span class="iconfont icon-lobby"></span>
+                <p>商务中心</p>
+            </div>
+            <div class="meeeting">
+                <span class="iconfont icon-huiyishi"></span>
+                <p>会议服务</p>
+            </div>
+            <div class="polish">
+                <span class="iconfont icon-caxieji"></span>
+                <p>擦鞋服务</p>
+            </div>
+            <div class="leisure">
+                <span class="iconfont icon-kafei"></span>
+                <p>休闲中心</p>
+            </div>
+        </div>
+    </div>
+    <div class="environment">
+        <div class="vague">
+            <div class="ban">
+                <h1>酒店环境</h1>
+                <p>云山珠水，鱼米之乡</p>
+            </div>
+            <a><span class="iconfont icon-24gf-playCircle"></span></a>
+        </div>
+        <div class="bg"></div>
+        <ul class="scenery">
+            <li>
+                <img src="./images/微信图片_1.png">
+                <p>广东大厦外景</p>
+            </li>
+            <li>
+                <img src="./images/微信图片_202103021153582.png">
+                <p>广东大厦外景</p>
+            </li>
+            <li>
+                <img src="./images/微信图片_202103021153584.png">
+                <p>广东大厦外景</p>
+            </li>
+            <li>
+                <img src="./images/微信图片_202103021153586.png">
+                <p>广东大厦外景</p>
+            </li>
+        </ul>
+        <ul class="point">
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="news">
+        <div class="ban">
+            <h1>最新资讯</h1>
+            <p>云山珠水，鱼米之乡</p>
+        </div>
+        <div class="news_list">
+            <div class="one">
+                <h3>行业动态 | 07-14 2021</h3>
+                <h2>新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻</h2>
+                <p>文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要...</p>
+            </div>
+            <div class="two imp">
+                <h3>企业新闻 | 07-14 2021</h3>
+                <h2>新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻</h2>
+                <p>文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要...</p>
+                
+            </div>
+            <div class="line"></div>
+            <div class="three">
+                <h3>行业动态 | 07-14 2021</h3>
+                <h2>新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻</h2>
+                <p>文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要...</p>
+            </div>
+            <div class="four">
+                <h3>行业动态 | 07-14 2021</h3>
+                <h2>新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻</h2>
+                <p>文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要...</p>
+            </div>
+        </div>
+        <div class="news_important">
+            <img src="./images/微信图片_202103021153582.png">
+            <div class="one">
+                <h3>企业新闻 | 07-14 2021</h3>
+                <h2>新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻</h2>
+            </div>
+            <button>查看详情<i>→</i></button>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav_img">
+            <img src="./images/14一层大堂中庭.png">
+            <div class="more">
+                <img src="./images/logo 拷贝.png">
+                <h2>入住北京广东大厦，享受会员豪礼</h2>
+                <a><div class="join">立即加入</div></a>
+                <a><div class="knowMore">了解更多</div></a>
+            </div>
+        </div>
+        <div class="call">
+            <img src="./images/矢量智能对象.png">
+            <p>预订热线：</p>
+            <h2>010-6841 2288</h2>
+        </div>
+        <div class="nav_list">
+            <ul>
+                <h3>关于大厦</h3>
+                <div class="list_line"></div>
+                <li class="active"><a>大厦简介</a></li>
+                <li><a>资质荣誉</a></li>
+                <li><a>发展历程</a></li>
+                <li><a>新闻资讯</a></li>  
+            </ul>
+            
+            <ul>
+                <h3>客房</h3>
+                <div class="list_line"></div>
+                <li><a>悦享大床房</a></li>
+                <li><a>悦享双床房</a></li>
+                <li><a>致享大床房</a></li>
+                <li><a>粤式行政套房</a></li>  
+                <li><a>岭南套房</a></li>  
+                <li><a>南粤套房</a></li>  
+            </ul>
+            <ul>
+                <h3>会议宴会</h3>
+                <div class="list_line"></div>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+            </ul>
+            <ul>
+                <h3>休闲服务</h3>
+                <div class="list_line"></div>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+            </ul>
+            <ul>
+                <h3>美食</h3>
+                <div class="list_line"></div>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+                <li><a>栏目名称</a></li>
+            </ul>
+        </div>
+        <footer>
+            <p>版权所有 © 北京广东大厦有限责任公司   粤ICP备111018xx号</p>
+            <p>网站建设：企泰科技</p>
+        </footer>
+    </div>
+    </body>
+</html>

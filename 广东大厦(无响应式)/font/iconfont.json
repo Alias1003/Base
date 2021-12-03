@@ -1,0 +1,107 @@
+{
+  "id": "2924901",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2463149",
+      "name": "下一个+",
+      "font_class": "xiayige",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "7594157",
+      "name": "24gf-playCircle",
+      "font_class": "24gf-playCircle",
+      "unicode": "ea82",
+      "unicode_decimal": 60034
+    },
+    {
+      "icon_id": "4410054",
+      "name": "叫醒服务",
+      "font_class": "jiaoxingfuwu",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7063901",
+      "name": "24-hour-reception",
+      "font_class": "-hour-reception",
+      "unicode": "e6f8",
+      "unicode_decimal": 59128
+    },
+    {
+      "icon_id": "7063924",
+      "name": "laundry_service",
+      "font_class": "laundry_service",
+      "unicode": "e6fc",
+      "unicode_decimal": 59132
+    },
+    {
+      "icon_id": "7063927",
+      "name": "lobby",
+      "font_class": "lobby",
+      "unicode": "e6fd",
+      "unicode_decimal": 59133
+    },
+    {
+      "icon_id": "19537694",
+      "name": "擦鞋机",
+      "font_class": "caxieji",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "22730887",
+      "name": "送餐服务",
+      "font_class": "songcanfuwu",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "2189443",
+      "name": "餐饮美食",
+      "font_class": "canyinmeishi",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "4294084",
+      "name": "咖啡",
+      "font_class": "kafei",
+      "unicode": "e78c",
+      "unicode_decimal": 59276
+    },
+    {
+      "icon_id": "6582932",
+      "name": "会议室-OA",
+      "font_class": "huiyishi",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "17397436",
+      "name": "客房",
+      "font_class": "kefang",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "954406",
+      "name": "中点",
+      "font_class": "zhongdian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "630092",
+      "name": "向下箭头",
+      "font_class": "xiangxiajiantou",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    }
+  ]
+}
