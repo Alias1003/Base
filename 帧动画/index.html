@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style type="text/css">
+        /*body {*/
+        /*    padding: 100px;*/
+        /*}*/
+
+        span {
+            display: inline-block;
+        }
+
+        .left-heart, .right-heart {
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+
+        .left-heart {
+            transform: rotateZ(-45deg);
+        }
+
+        .right-heart {
+            transform: translateX(-33px) rotateZ(45deg);
+        }
+
+        @keyframes beat { /*关键帧,beat有规律的收缩和扩展*/
+            35% {
+                transform: scale(1.5)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        .heart {
+            animation: beat 1.3s infinite; /*无限循环*/
+            margin: 100px;
+            float: left;
+        }
+
+        .container{
+            width: 500px;
+            margin: auto;
+            position: relative;
+        }
+        .container img{
+            width: 100%;
+        }
+        .point{
+            top: 550px;
+            left: 550px;
+            display: block;
+            background: #6AD79E;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .point1{
+            top: 350px;
+            left: 550px;
+            display: block;
+            background: #6AD79E;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .point2{
+            top: 450px;
+            left: 450px;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            background: red;
+        }
+        .point3{
+            top: 350px;
+            left: 550px;
+            position: absolute;
+            display: block;
+            /*background: #6fb500;*/
+        }
+        .point4{
+            left: 350px;
+            top: 500px;
+            display: block;
+            position: absolute;
+        }
+        .ripple-1{
+            animation: ripple 4500ms 225ms infinite;
+        }
+        .ripple-2{
+            animation: ripple 4500ms 1575ms infinite;
+        }
+        .ripple-3{
+            animation: ripple 4000ms 200ms infinite;
+        }
+        .ripple-4{
+            animation: ripple 4000ms 1450ms infinite;
+        }
+        .ripple-5{
+            animation: ripple 5000ms 250ms infinite;
+        }
+        .ripple-6{
+            animation: ripple 5000ms 1550ms infinite;
+        }
+        .ripple-7{
+            animation: ripple 3000ms 150ms infinite;
+        }
+        .ripple-8{
+            animation: ripple 3000ms 1250ms infinite;
+        }
+        .ripple-base{
+            width: 120px;
+            height: 120px;
+            border: 2px solid #00cdec;
+            border-radius: 50%;
+            transform: scale(0.01);
+            position: absolute;
+            left: -175px;
+            top: -157px;
+        }
+        .ripple-base1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid indianred;
+            transform: scale(0.01);
+            position: absolute;
+            left: -305px;
+            top: -157px;
+        }
+        .ripple-base2{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #6fb500;
+            transform: scale(0.01);
+            position: absolute;
+            top: -205px;
+            left: -257px;
+        }
+        .ripple-base3{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 5px solid pink;
+            transform: scale(0.01);
+            position: absolute;
+            top: -200px;
+            left: -250px;
+        }
+        @keyframes ripple {
+            100%{
+                opacity: 0;/*不透明级别*/
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <span class="heart">
+        <span class="left-heart"></span>
+        <span class="right-heart"></span>
+    </span>
+    <div class="container">
+        <img src="../images/nong.jpg">
+        <div class="point">
+            <div class="ripple-base ripple-1"></div>
+            <div class="ripple-base ripple-2"></div>
+        </div>
+        <div class="point1">
+            <div class="ripple-base ripple-1"></div>
+            <div class="ripple-base ripple-2"></div>
+        </div>
+        <div class="point2">
+            <div class="ripple-base1 ripple-3"></div>
+            <div class="ripple-base1 ripple-4"></div>
+        </div>
+        <div class="point3">
+            <div class="ripple-base2 ripple-5"></div>
+            <div class="ripple-base2 ripple-6"></div>
+        </div>
+        <div class="point4">
+            <div class="ripple-base3 ripple-7"></div>
+            <div class="ripple-base3 ripple-8"></div>
+        </div>
+        <!--controls占据空间 autoplay自动播放 loop循环播放-->
+        <audio src="../images/陈立农%20-%20年少无邪.mp3" controls autoplay loop></audio>
+    </div>
+</body>
+</html>

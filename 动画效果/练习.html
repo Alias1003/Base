@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画效果</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            float: left;
+            position: relative;
+            width: 480px;
+            height: 680px;
+            margin: 10px 430px;
+        }
+        .box img{
+            width: 480px;
+            transform-origin: 50% 50%;/*以中心位置开始*/
+        }
+        .box > * {
+            transition: 1s;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .box h2{
+            color: white;
+            width: 200px;
+            transform: translateX(10px) translateY(460px);
+        }
+        .box p{
+            color: white;
+        }
+        .box p:nth-of-type(1){
+            transform: translateX(-150px) translateY(500px);
+        }
+        .box p:nth-of-type(2){
+            transform: translateX(-110px) translateY(540px);
+            transition: 1s 0.1s;/*延时0.1s*/
+        }
+        .box p:nth-of-type(3){
+            transform: translateX(-100px) translateY(580px);
+            transition: 1s 0.2s;/*延时0.2s*/
+        }
+        .box:hover p:nth-of-type(1){
+            transform: translateX(10px) translateY(500px);
+        }
+        .box:hover p:nth-of-type(2){
+            transform: translateX(10px) translateY(540px);
+            transition: 1s 0.1s;/*延时0.1s*/
+        }
+        .box:hover p:nth-of-type(3){
+            transform: translateX(10px) translateY(580px);
+            transition: 1s 0.2s;/*延时0.2s*/
+        }
+        .box:hover img{
+            transform: scale(1.2) rotate(-10deg);/*scale缩放效果,放大1.2倍,rotate旋转效果,向左旋转10deg*/
+        }
+
+        .box1{
+            float: left;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .box1 img:nth-of-type(1){
+            width: 100px;
+            margin: 0 100px 0;
+        }
+        .box1 *{
+            position: absolute;
+        }
+        .box1 p:nth-of-type(1){
+            transform: translateX(50px) translateY(70px);
+        }
+        .box1:hover p:nth-of-type(1){
+            transform: translateX(125px) translateY(70px);
+            transition: 1s;
+        }
+        .box1:hover img,.box2:hover img{
+            transform: scale(1.2);
+        }
+        .box2{
+            float: left;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            margin: 0 300px 0;
+        }
+        .box2 img{
+            height: 100px;
+            width: 100px;
+        }
+        .box2 p:nth-of-type(1){
+            transform: translateX(-50px) translateY(-40px);
+        }
+        .box2:hover p:nth-of-type(1){
+            transform: translateX(20px) translateY(-40px);
+            transition: 1s;
+        }
+        .box3{
+            float: left;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            margin: 0 100px 0;
+        }
+        .box3 img{
+            height: 100px;
+            width: 100px;
+        }
+        .box3 img:nth-of-type(1){
+            transform: translateX(-200px) translateY(0px);
+        }
+        .box3 p:nth-of-type(1){
+            transform: translateX(-250px) translateY(-65px);
+        }
+        .box3:hover p:nth-of-type(1){
+            transform: translateX(-168px) translateY(-65px);
+            transition: 1s;
+        }
+        .tou img:nth-of-type(1){
+            width: 240px;
+            height: 340px;
+            transform: perspective(1000px) rotateY(50deg);/*3D透视,沿Y轴旋转*/
+        }
+        .tou img:nth-of-type(2){
+             width: 240px;
+             height: 340px;
+             transform: perspective(1000px) rotateX(50deg);
+         }
+        .tou img:nth-of-type(3){
+            width: 240px;
+            height: 340px;
+            transform: perspective(1000px) rotateZ(50deg);
+        }
+        .tou img:nth-of-type(4){
+            width: 240px;
+            height: 340px;
+            transform: perspective(1000px);
+        }
+
+        #cube{
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            border: 1px dashed black;/*黑色虚线*/
+            font-size: 80px;
+            text-align: center;
+            line-height: 300px;
+            /*perspective: 1000px;*//*透视距离*/
+            transition: 2s;
+            transform: rotateY(-15deg) rotateX(-10deg);/*给父容器增加旋转的角度,全部一起旋转*/
+            transform-style: preserve-3d;/*preserve保存、维持,3D立体*/
+        }
+        #cube div{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 2s;
+            opacity: 0.5;/*透明度,0完全透明,1完全不透明*/
+        }
+        #cube .flat1{/*上*/
+            background: #FF957C;
+            transform: translateY(-150px) rotateX(90deg);/*向上移动高度的一半,沿X轴旋转90°*/
+        }
+
+        #cube .flat2 {/*下*/
+            background: #FFF079;
+            transform: translateY(150px) rotateX(-90deg);/*向下移动高度的一半,沿X轴旋转90°*/
+        }
+
+        #cube .flat3 {/*左*/
+            background: #74D3B8;
+            transform: translateX(-150px) rotateY(90deg);/*向左移动高度的一半,沿Y轴旋转90°*/
+        }
+
+        #cube .flat4 {/*右*/
+            background: #FFC877;
+            transform: translateX(150px) rotateY(90deg);/*向右移动高度的一半,沿Y轴旋转90°*/
+        }
+
+        #cube .flat5 {/*前*/
+            background: #e3a9ff;
+            transform: translateZ(150px);/*向前移动高度的一半*/
+        }
+
+        #cube .flat6 {/*后*/
+            background: #ceff70;
+            transform: translateZ(-150px);/*向后移动高度的一半*/
+        }
+
+    /*    帧动画*/
+        span{
+            display: inline-block;
+        }
+        .left-heart,.right-heart{
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        .left-heart{
+            transform: rotateZ(-45deg);
+        }
+        .right-heart{
+            transform: translateX(-33px) rotateZ(45deg);
+        }
+        @keyframes beat {
+            35%{transform: scale(1.5)}/*缩放*/
+            100%{transform: scale(1)}
+        }
+        .heart{
+            margin: 50px;
+            animation: beat 1.5s infinite;
+        }
+
+        #a-box{
+            float: none;
+            width: 100%;
+            margin: 0 100px;
+        }
+        .b-box{
+            width: 50%;
+            float: left;
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 20px 20px 50px 0;
+            position: relative;
+            vertical-align: top;
+        }
+        .b-box:before{
+            content: '';
+            width: 30%;
+            height: 2px;
+            display: block;
+            position: absolute;
+            top: 0;
+            transition:.5s;
+            background: #2f80ed;
+        }
+        .b-box:hover:before{
+            width: 50%;
+        }
+
+        ul{
+            width: 435px;
+            margin: 30px auto;
+            overflow: hidden;
+            list-style: none;
+        }
+        ul li{
+            background: red;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            float: left;
+            margin: 0 5px;
+            transform: skewX(-30deg);
+        }
+        ul li.active{background: blue;cursor: pointer;}
+
+        ul li span{
+            transform: skewX(30deg);
+            display: block;
+        }
+        ul li:first-child{
+            padding-left: 10px;
+            margin-left: -10px;
+        }
+        ul li:last-child{
+            padding-right: 20px;
+            margin-right: -20px;
+        }
+       </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/nong.jpg" >
+        <h2>陈立农</h2>
+        <p class="p1">生日:2000.10.03</p>
+        <p class="p2">身高:185cm</p>
+        <p class="p3">体重:65kg</p>
+    </div>
+    <div class="box1">
+        <img src="../images/上.jpg">
+        <p>上一首</p>
+    </div>
+    <div class="box2">
+       <img src="../images/下.jpg">
+      <p>下一首</p>
+    </div>
+    <div class="box3">
+        <img src="../images/播放.jpeg">
+        <p>播放</p>
+    </div>
+    <div class="tou">
+        <img src="../images/nong.jpg">
+        <img src="../images/nong.jpg">
+        <img src="../images/nong.jpg">
+        <img src="../images/nong.jpg">
+    </div>
+    <div id="cube">
+        <div class="flat1"></div>
+        <div class="flat2"></div>
+        <div class="flat3"></div>
+        <div class="flat4"></div>
+        <div class="flat5"></div>
+        <div class="flat6"></div>
+    </div>
+    <span class="heart">
+        <span class="left-heart"></span>
+        <span class="right-heart"></span>
+    </span>
+    <audio src="../images/陈立农%20-%20年少无邪.mp3" controls></audio>
+    <div id="a-box">
+        <div class="b-box">
+            1
+        </div>
+        <div class="b-box">
+            2
+        </div>
+        <div class="b-box">
+            3
+        </div>
+        <div class="b-box">
+            4
+        </div>
+    </div>
+
+    <h2>斜切导航</h2>
+    <div>
+        <ul>
+            <li class="active"><span>首页</span></li>
+            <li><span>照片</span></li>
+            <li><span>联系</span></li>
+            <li><span>我们</span></li>
+
+        </ul>
+    </div>
+</body>
+</html>

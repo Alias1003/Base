@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻书效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none
+        }
+
+        .parent {
+            width: 400px;
+            height: 200px;
+            margin: 30px auto;
+            position: relative;
+            perspective: 700px;
+        }
+
+        .parent ul {
+            width: 100%;
+            height: 100%;
+            backface-visiblity: hidden;
+            position: absolute;
+            transition: 1s;
+        }
+
+        .parent ul li {
+            width: 200px;
+            height: 100px;
+            background: rgba(255, 122, 218, 0.73);
+        }
+
+        .parent ul li:nth-child(1) {
+            transform: rotateY(0deg);
+            top: 0;
+            left: 0;
+        }
+
+        .parent ul li:nth-child(2) {
+            transform: rotateY(0deg);
+            top: 0;
+            left: 0;
+        }
+
+        .parent ul li:nth-child(3) {
+            transform: rotateY(0deg);
+        }
+
+        .parent ul li:nth-child(4) {
+            transform: rotateY(0deg);
+        }
+
+        .parent ul li:nth-child(5) {
+            transform: rotateY(0deg);
+        }
+
+        .parent ul:hover li:nth-child(1) {
+            transform: rotateY(-180deg);
+        }
+
+        .parent ul:hover li:nth-child(2) {
+            transform: rotateY(180deg);
+        }
+
+        .parent ul:hover li:nth-child(3) {
+            transform: rotateY(180deg);
+        }
+
+        .parent ul:hover li:nth-child(4) {
+            transform: rotateY(180deg);
+        }
+
+        .parent ul:hover li:nth-child(5) {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <ul>
+        <li>第一页</li>
+        <li>第二页</li>
+        <li>第三页</li>
+        <li>第四页</li>
+        <li>第五页</li>
+    </ul>
+</div>
+</body>
+</html>

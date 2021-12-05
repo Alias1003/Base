@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .progress {
+            width: 350px;
+            height: 100px;
+            margin: auto;
+            animation: infinite 5s move linear;
+            background-image: linear-gradient(to right bottom, #80c5ff 0%, #80c5ff 25%, #f9ff80 25%, #f9ff80 50%, #80c5ff 50%, #80c5ff 75%, #f9ff80 75%, #f9ff80 100%);
+            background-size: 100px
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 350px 0;
+            }
+        }
+
+        .pro {
+            width: 350px;
+            height: 100px;
+            margin: auto;
+            background-image: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(245, 26, 78, 1));
+        }
+
+        /*.photo{width: 350px;-webkit-box-reflect: below 20px linear-gradient(rgba(255,255,255,0) 50%,rgba(245,26,78,1));}*/
+        /*.photo{width: 350px;margin: auto;transform: scale(-1);}*/
+        .photo {
+            height: 250px;
+            width: 350px;
+            margin: auto;
+            filter: blur(1px);
+            border: 1px solid black;
+        }
+
+        /*blur模糊*/
+        .box {
+            height: 50px;
+            width: calc(100% - 50px);
+            background: red;
+        }
+
+        /*calc计算*/
+    </style>
+</head>
+<body>
+<div class="progress"></div>
+<div class="pro"></div>
+<div class="photo">
+    <img src="../images/阴影.jpg">
+    <div class="box"></div>
+</div>
+
+</body>
+</html>

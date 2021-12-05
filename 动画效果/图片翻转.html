@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片翻转</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            display: block;
+        }
+
+        .parent {
+            width: 256px;
+            height: 256px;
+            margin: 30px auto;
+            position: relative;
+            perspective: 700px;
+        }
+
+        .parent div {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            backface-visibility: hidden;
+            transition: 1s;
+            overflow: hidden;
+        }
+
+        .parent div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .parent div:first-child {
+            transform: rotateY(0deg);
+        }
+
+        .parent div:last-child {
+            transform: rotateY(-180deg);
+        }
+
+        .parent:hover div:first-child {
+            transform: rotateY(180deg);
+        }
+
+        .parent:hover div:last-child {
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div><img src="../images/暂停.jpeg"></div>
+    <div><img src="../images/播放.jpeg"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>骰子</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 0;
+        }
+
+        #box .box1 {
+            width: 100px;
+            height: 100px;
+            border: 1px black solid;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            place-items: center center;
+        }
+
+        #box .box1 div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+            grid-area: 2/2/3/3;
+        }
+
+        #box .box2 {
+            width: 100px;
+            height: 100px;
+            border: 1px black solid;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            place-items: center center;
+        }
+
+        #box .box2 div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        #box .box2 div:nth-child(2) {
+            grid-area: 3/3/4/4;
+        }
+
+        #box .box3, .box4, .box5, .box6 {
+            width: 100px;
+            height: 100px;
+            border: 1px black solid;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            place-items: center center;
+            grid-template-areas: "a1 a2 a3" "a4 a5 a6" "a7 a8 a9"
+        }
+
+        #box .box3 div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        #box .box3 div:nth-child(2) {
+            grid-area: 3/3/4/4;
+        }
+
+        #box .box3 div:nth-child(3) {
+            grid-area: a5;
+        }
+
+
+        #box .box4 div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        #box .box4 div:nth-child(2) {
+            grid-area: a3;
+        }
+
+        #box .box4 div:nth-child(3) {
+            grid-area: a7;
+        }
+
+        #box .box4 div:nth-child(4) {
+            grid-area: a9;
+        }
+
+        #box .box5 div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        #box .box5 div:nth-child(2) {
+            grid-area: a3;
+        }
+
+        #box .box5 div:nth-child(3) {
+            grid-area: a7;
+        }
+
+        #box .box5 div:nth-child(4) {
+            grid-area: a9;
+        }
+
+        #box .box5 div:nth-child(5) {
+            grid-area: a5;
+        }
+
+        #box .box6 div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        #box .box6 div:nth-child(2) {
+            grid-area: a3;
+        }
+
+        #box .box6 div:nth-child(3) {
+            grid-area: a7;
+        }
+
+        #box .box6 div:nth-child(4) {
+            grid-area: a9;
+        }
+
+        #box .box6 div:nth-child(5) {
+            grid-area: a4;
+        }
+
+        #box .box6 div:nth-child(6) {
+            grid-area: a6;
+        }
+
+        #parent {
+            width: 300px;
+            height: 300px;
+            perspective: 300px;
+            margin: 30px auto;
+            border: 1px solid white;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 2s;
+            transform-origin: center center -50px;
+            /*transform: rotateX(45deg) rotateY(45deg);!*配合hover使用*!*/
+            animation: infinite 2s move linear;
+        }
+
+        #box .box1, .box2, .box3, .box4, .box5, .box6 {
+            position: absolute;
+            background: pink;
+        }
+
+        #box .box1 {
+            left: 0px;
+            top: 0px;
+        }
+
+        #box .box2 {
+            top: 0;
+            left: -100px;
+            transform-origin: right;
+            transform: rotateY(-90deg);
+        }
+
+        #box .box3 {
+            top: 0;
+            left: 0px;
+            transform: translateZ(-100px);
+        }
+
+        #box .box4 {
+            top: 0;
+            left: 100px;
+            transform-origin: left;
+            transform: rotateY(90deg);
+        }
+
+        #box .box5 {
+            top: 100px;
+            left: 0;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+
+        #box .box6 {
+            top: -100px;
+            left: 0;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+        }
+
+        #box:hover {
+            transform: rotateX(405deg) rotateY(45deg);
+        }
+
+        /*水平翻滚*/
+        /*@keyframes move {*/
+        /*    0%{transform: rotateY(0deg)}*/
+        /*    100%{transform: rotateY(360deg)}*/
+        /*}*/
+
+        /*垂直翻滚*/
+        @keyframes move {
+            0% {
+                transform: rotateX(0deg)
+            }
+            100% {
+                transform: rotateX(360deg)
+            }
+        }
+
+        #box1 {
+            width: 280px;
+            height: 352px;
+            margin: auto;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "a1 a2 a2" "a3 a2 a2" "a4 a4 a5" "a6 a7 a7";
+            grid-gap: 6px 6px; /*上下间距*/
+        }
+
+        #box1 div {
+            background: #f07a1a;
+        }
+
+        #box1 div:nth-child(1) {
+            grid-area: a1;
+        }
+
+        #box1 div:nth-child(2) {
+            grid-area: a2;
+        }
+
+        #box1 div:nth-child(3) {
+            grid-area: a3;
+        }
+
+        #box1 div:nth-child(4) {
+            grid-area: a4;
+        }
+
+        #box1 div:nth-child(5) {
+            grid-area: a5;
+        }
+
+        #box1 div:nth-child(6) {
+            grid-area: a6;
+        }
+
+        #box1 div:nth-child(7) {
+            grid-area: a7;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="box">
+        <div class="box1">
+            <div></div>
+        </div>
+        <div class="box2">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box3">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box5">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box6">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div id="box1">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

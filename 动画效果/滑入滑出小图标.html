@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小图标</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 0;/*解决div之间有空隙*/
+        }
+
+        ul{list-style: none;}
+        ul{
+            margin: 0 350px;
+            width: 1000px;
+        }
+        ul li {
+            margin: 50px;
+            /*width: 100px;*/
+            /*height: 100px;*/
+            float: left;
+            /*position: relative;*/
+        }
+        ul li img{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            /*position: absolute;*/
+        }
+        ul li img:hover{
+            animation: move 0.5s;
+        }
+        @keyframes move {
+            0%{transform: translate(0,0); opacity: 1;}
+            60%{transform: translate(0,-50px); opacity: 0;}/*向Y轴移动,慢慢淡出*/
+            61%{transform: translate(0,80px);opacity: 0;}
+            100%{transform: translate(0,0);opacity: 1;}
+        }
+
+        .box1{
+            width: 50px;
+            height: 50px;
+            /*background: red;*/
+            margin: 0 auto;
+            clear: both;
+            position: relative;
+        }
+        .box1 .box1_1,.box1_2{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .box1 .box1_1 div,.box1_2 div{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: yellow;
+            position: absolute;
+            animation: loading 1.5s infinite linear;/*名字loading,延时2s,无限次数,线性*/
+        }
+        @keyframes loading {
+            0%{transform: scale(1);}
+            50%{transform: scale(0);}
+            100%{transform: scale(1);}
+        }
+
+        .box1 .box1_2{
+            transform: rotate(45deg);
+        }
+        .box1 .box1_1 div:nth-child(1),.box1_2 div:nth-child(1){left: 0; top: 0;}
+        .box1 .box1_1 div:nth-child(2),.box1_2 div:nth-child(2){right: 0; top: 0;}
+        .box1 .box1_1 div:nth-child(3),.box1_2 div:nth-child(3){left: 0; bottom: 0;}
+        .box1 .box1_1 div:nth-child(4),.box1_2 div:nth-child(4){right: 0; bottom: 0;}
+
+        /*.box1 .box1_1 div:nth-child(1){ animation-delay: -0s}*//*逆时针旋转*/
+        /*.box1 .box1_2 div:nth-child(1){ animation-delay: -0.2s}*/
+        /*.box1 .box1_1 div:nth-child(2){ animation-delay: -0.4s}*/
+        /*.box1 .box1_2 div:nth-child(2){ animation-delay: -0.6s}*/
+        /*.box1 .box1_1 div:nth-child(4){ animation-delay: -0.8s}*/
+        /*.box1 .box1_2 div:nth-child(4){ animation-delay: -1s}*/
+        /*.box1 .box1_1 div:nth-child(3){ animation-delay: -1.2s}*/
+        /*.box1 .box1_2 div:nth-child(3){ animation-delay: -1.4s}*/
+
+
+        .box1 .box1_2 div:nth-child(1){ animation-delay: 0s}/*顺时针旋转*/
+        .box1 .box1_1 div:nth-child(2){ animation-delay: 0.2s}
+        .box1 .box1_2 div:nth-child(2){ animation-delay: 0.4s}
+        .box1 .box1_1 div:nth-child(4){ animation-delay: 0.6s}
+        .box1 .box1_2 div:nth-child(4){ animation-delay: 0.8s}
+        .box1 .box1_1 div:nth-child(3){ animation-delay: 1s}
+        .box1 .box1_2 div:nth-child(3){ animation-delay: 1.2s}
+        .box1 .box1_1 div:nth-child(1){ animation-delay: 1.4s}
+
+        .box2{
+            margin:100px auto 0;
+            width: 200px;
+            height: 100px;
+            clear: both;
+            /*position: relative;*/
+        }
+        .box2 .box2_1{
+            width: 200px;
+            height: 100px;
+            /*background: #6fb500;*/
+            /*position: absolute;*/
+        }
+        .box2 .box2_1 div{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: red;
+            top: 50px;
+            opacity: 0.5;
+            animation: linearMove 1s infinite linear;
+            /*position: absolute;*/
+        }
+        @keyframes linearMove {
+            0%{transform: scale(1);}
+            25%{transform: scale(0)}
+            50%{transform: scale(1);}
+            75%{transform: scale(1.75)}
+            100%{transform: scale(1);}
+        }
+
+        .box2 .box2_1 div:nth-child(1){left: 0px;animation-delay: 0s}
+        .box2 .box2_1 div:nth-child(2){left: 40px;animation-delay: 0.18s}
+        .box2 .box2_1 div:nth-child(3){left: 80px;animation-delay: 0.36s}
+        .box2 .box2_1 div:nth-child(4){left: 120px;animation-delay: 0.54s}
+        .box2 .box2_1 div:nth-child(5){left: 160px;animation-delay: 0.72s}
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <img src="../images/search_01.jpg">
+    </li>
+    <li>
+        <img src="../images/返回.jpeg">
+    </li>
+    <li>
+        <img src="../images/删除.jpeg">
+    </li>
+</ul>
+<div class="box1">
+    <div class="box1_1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="box1_2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="box2">
+    <div class="box2_1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+</body>
+</html>
