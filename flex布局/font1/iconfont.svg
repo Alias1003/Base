@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="gengduo-tianchong" unicode="&#58991;" d="M106.666667 384m-106.666667 0a106.666667 106.666667 0 1 1 213.333333 0 106.666667 106.666667 0 1 1-213.333333 0ZM512 384m-106.666667 0a106.666667 106.666667 0 1 1 213.333334 0 106.666667 106.666667 0 1 1-213.333334 0ZM917.333333 384m-106.666666 0a106.666667 106.666667 0 1 1 213.333333 0 106.666667 106.666667 0 1 1-213.333333 0Z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
